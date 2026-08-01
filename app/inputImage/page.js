@@ -58,11 +58,11 @@ function InputImage() {
             const formData = new FormData()
             formData.append('file', file)
             console.log("before api request")
-            const resp = await fetch('https://grain-classification-model.onrender.com/predict', {
-                method: 'POST',
-                headers: { "x-api-key": "aed6f9dc0eaebe66d077a248951915f9" },
-                body: formData,
-            })
+            console.log(process.env.API_KEY)
+            const resp = await fetch("/api/predict", {
+  method: "POST",
+  body: formData,
+});
             console.log(resp)
             const data = await resp.json()
             
