@@ -61,12 +61,12 @@ function InputImage() {
             console.log("before api request")
             console.log(process.env.API_KEY)
             const resp = await fetch("/api/predict", {
-  method: "POST",
-  body: formData,
-});
+                method: "POST",
+                body: formData,
+            });
             console.log(resp)
             const data = await resp.json()
-            
+
             console.log("after api request")
 
 
@@ -114,7 +114,16 @@ function InputImage() {
     console.log("grainInfo state:", grainInfo);
     return (
         <div className="flex flex-col justify-between min-h-screen bg-[radial-gradient(circle_at_top,_rgba(251,191,36,0.14),_transparent_40%),linear-gradient(180deg,_#0f172a_0%,_#020617_100%)] px-3 py-8 text-slate-100 sm:px-5 lg:px-6">
+            <div className="mb-8 text-center">
+                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                    🌾 Grain Classification & Information Portal
+                </h1>
 
+                <p className="mt-4 text-base text-slate-400 sm:text-lg">
+                    Powered by <span className="font-semibold text-amber-300">Machine Learning</span> &{" "}
+                    <span className="font-semibold text-amber-300">Mistral AI</span>
+                </p>
+            </div>
 
             <div className="mx-auto flex w-full max-w-3l flex-col gap-5 rounded-3xl border border-white/10 bg-white/5 p-4 shadow-2xl shadow-black/30 backdrop-blur-xl sm:p-6">
                 <h2 className="flex justify-center text-2xl font-semibold tracking-tight text-white sm:text-3xl">Upload grains Image</h2>
@@ -188,10 +197,11 @@ function InputImage() {
                         <img src={preview.url} alt="preview" className="h-52 w-full rounded-2xl object-cover ring-1 ring-white/10 md:w-52" />
 
                         {grainInfo && (
-                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                                <h3 className="mb-3 flex justify-around text-base font-semibold text-amber-300">
+                            <div className="rounded-2xl h-52 font-
+] w-full border border-white/10 bg-white/5 p-4">
+                                <h1 className="mb-3 flex justify-around text-base font-semibold text-amber-300">
                                     🌾 Basic Information
-                                </h3>
+                                </h1>
 
                                 <div className="grid gap-1.5 sm:grid-cols-2">
                                     <span>🌾 <strong>Grain Name:</strong> {grainInfo.grainName}</span>
@@ -203,14 +213,14 @@ function InputImage() {
                             </div>
 
                         )}
-                        
+
                     </div>
 
                     {grainInfo && (
                         <div className="mt-4 space-y-4">
 
                             {/* Basic Information */}
-                            
+
 
                             {/* Nutritional Information */}
                             <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
