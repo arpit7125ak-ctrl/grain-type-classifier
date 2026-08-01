@@ -153,7 +153,7 @@ function InputImage() {
                     />
                 </div>
 
-                <div className="m-auto flex flex-col gap-2 sm:flex-row">
+                <div className="m-auto flex  gap-2 flex-row flex-wrap">
                     <button
                         onClick={handleSubmit}
                         disabled={loading}
