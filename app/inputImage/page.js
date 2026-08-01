@@ -114,7 +114,7 @@ function InputImage() {
     return (
         <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(251,191,36,0.14),_transparent_40%),linear-gradient(180deg,_#0f172a_0%,_#020617_100%)] px-4 py-10 text-slate-100 sm:px-6 lg:px-8">
             <div className="mx-auto flex w-full max-w-3xl flex-col gap-6 rounded-3xl border border-white/10 bg-white/5 p-5 shadow-2xl shadow-black/30 backdrop-blur-xl sm:p-8">
-                <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Upload Cattle Image</h2>
+                <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Upload grains Image</h2>
 
                 <div
                     role="button"
@@ -178,28 +178,15 @@ function InputImage() {
 
                 {error && <p className="text-sm text-rose-400">Error: {error}</p>}
 
-                {result && <h3 className="text-xl font-semibold tracking-tight text-white">Prediction</h3>}
-                {result && <div className="mt-2 rounded-3xl border border-white/10 bg-slate-950/60 p-5 shadow-xl shadow-black/30 backdrop-blur sm:p-6">
-                    <h2 className="text-xl font-semibold text-white">🐄 Breed Details  </h2>
+                {result && <h1 className="flex justify-around  text-xl font-semibold tracking-tight text-white">Prediction</h1>}
+                {result && <div className=" mt-2 rounded-3xl border border-white/10 bg-slate-950/60 p-5 shadow-xl shadow-black/30 backdrop-blur sm:p-6">
+                    <h2 className="text-xl font-semibold flex justify-around  text-white">Grain Details  </h2>
                     <div className='mt-4 flex flex-col gap-5 md:flex-row md:items-start md:gap-7' >
                         <img src={preview.url} alt="preview" className="h-56 w-full rounded-2xl object-cover ring-1 ring-white/10 md:w-56" />
-                        <div className='flex flex-col gap-1 text-slate-200'>
-                            <span className="text-sm uppercase tracking-[0.2em] text-amber-300/80">breed name</span>
-                            <span className="text-lg font-medium text-white">Scientific Name</span>
-                            <pre className="mt-4 whitespace-pre-wrap rounded-2xl border border-white/10 bg-black/30 p-4 text-sm text-slate-100">diseases : {result.predicted_label
-                            }</pre>
-                            <pre className="mt-3 whitespace-pre-wrap rounded-2xl border border-white/10 bg-black/30 p-4 text-sm text-slate-100">confidence : {(result.confidence * 100).toFixed(2)}%</pre>
 
-
-                        </div>
-                    </div>
-
-                    {grainInfo && (
-                        <div className="mt-5 space-y-6">
-
-                            {/* Basic Information */}
+                        {grainInfo && (
                             <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                                <h3 className="mb-4 text-lg font-semibold text-amber-300">
+                                <h3 className="mb-4 flex justify-around text-lg font-semibold text-amber-300">
                                     🌾 Basic Information
                                 </h3>
 
@@ -212,9 +199,19 @@ function InputImage() {
                                 </div>
                             </div>
 
+                        )}
+                        
+                    </div>
+
+                    {grainInfo && (
+                        <div className="mt-5 space-y-6">
+
+                            {/* Basic Information */}
+                            
+
                             {/* Nutritional Information */}
                             <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                                <h3 className="mb-4 text-lg font-semibold text-amber-300">
+                                <h3 className="mb-4 text-lg flex justify-around  font-semibold text-amber-300">
                                     🥗 Nutritional Information
                                 </h3>
 
@@ -237,7 +234,7 @@ function InputImage() {
 
                             {/* Growing Conditions */}
                             <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                                <h3 className="mb-4 text-lg font-semibold text-amber-300">
+                                <h3 className="mb-4 text-lg flex justify-around  font-semibold text-amber-300">
                                     🌱 Growing Conditions
                                 </h3>
 
@@ -252,7 +249,7 @@ function InputImage() {
 
                             {/* Uses */}
                             <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                                <h3 className="mb-4 text-lg font-semibold text-amber-300">
+                                <h3 className="mb-4 text-lg flex justify-around  font-semibold text-amber-300">
                                     🍞 Uses
                                 </h3>
 
@@ -277,7 +274,7 @@ function InputImage() {
 
                             {/* Health Benefits */}
                             <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                                <h3 className="mb-4 text-lg font-semibold text-amber-300">
+                                <h3 className="mb-4 text-lg flex justify-around  font-semibold text-amber-300">
                                     ❤️ Health Benefits
                                 </h3>
 
@@ -290,7 +287,7 @@ function InputImage() {
 
                             {/* Storage Guidelines */}
                             <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                                <h3 className="mb-4 text-lg font-semibold text-amber-300">
+                                <h3 className="mb-4 text-lg flex justify-around  font-semibold text-amber-300">
                                     📦 Storage Guidelines
                                 </h3>
 
